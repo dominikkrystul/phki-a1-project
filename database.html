@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demonstration database — Northline Studio</title>
+  <link rel="stylesheet" href="styles.css"><script src="database.js" defer></script><script src="database-viewer.js" defer></script>
+</head>
+<body>
+  <header><a class="logo" href="index.html">Northline Studio</a><a href="index.html">Return to client portal</a></header>
+  <main>
+    <h1>Simulated database · dummy data only</h1>
+    <p>This public demonstration viewer shows the actual demo records used by registration and login. It is not secure or protected authentication.</p>
+    <p>Data belongs to this browser and this site address. It is not sent to a server or shared between visitors. Registration deliberately stores the fixed dummy password as readable text for a fictional scenario.</p>
+    <p id="database-status" role="status" aria-live="polite"></p>
+    <div class="table-scroll" role="region" aria-label="Demo account records" tabindex="0"><table><caption>Current browser records</caption><thead><tr><th scope="col">ID</th><th scope="col">Name</th><th scope="col">Email</th><th scope="col">Password</th><th scope="col">Created (UTC)</th></tr></thead><tbody id="database-records"></tbody></table></div>
+    <div class="actions"><button id="download">Download JSON</button><button id="reset-data" class="secondary">Reset demo data</button></div>
+    <p class="muted">Reset removes this site’s demo account and the current tab’s demo session. Audience reflections are never stored here.</p>
+  </main>
+  <footer><span>Northline Studio · © 2026 fictional company</span><span>Student project · fictional demo</span></footer>
+</body>
+</html>

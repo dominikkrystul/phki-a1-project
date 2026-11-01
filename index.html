@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Client portal — Northline Studio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="database.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header><a class="logo" href="index.html">Northline Studio</a><nav aria-label="Main navigation"><a href="#register" data-next="register">Create account</a><a href="#login" data-next="login">Client login</a></nav></header>
+  <main class="portal-layout">
+    <p class="notice">Fictional interactive scenario. Use the provided demo details only.</p>
+    <noscript>This experience requires JavaScript. Enable it and reload to begin.</noscript>
+
+    <p id="status" role="status" aria-live="polite"></p>
+    <aside id="portal-intro">
+      <p class="studio-line">Independent design, shared direction.</p>
+      <h1>Good work starts with a clear conversation.</h1>
+      <p>Northline Studio is a fictional design company creating thoughtful brands and digital experiences.</p>
+      <p>Our client portal brings your projects, milestones, and account details together. Create your demo account to take a look.</p>
+      <div class="studio-services"><span>Brand identity</span><span>Digital design</span><span>Creative direction</span></div>
+    </aside>
+    <div id="stages">
+    <section id="register" aria-labelledby="register-title" hidden>
+      <h1 id="register-title" tabindex="-1">Create your account</h1>
+      <p>Demo only. Use Alex Morgan, alex@example.test, and DemoOnly!2026. These read-only fields prevent real credentials from being entered.</p>
+      <form id="register-form" autocomplete="off">
+        <label for="register-name">Name</label>
+        <input id="register-name" readonly placeholder="Use the button below">
+        <label for="register-email">Email</label>
+        <input id="register-email" type="email" readonly>
+        <label for="register-password">Password</label>
+        <input id="register-password" type="password" readonly autocomplete="off">
+        <div class="actions"><button type="button" class="secondary" data-fill="register">Use demo details</button><button id="register-submit" disabled>Register demo account</button></div>
+      </form>
+      <p class="switch">Already registered? <a href="#login" data-next="login">Log in</a></p>
+    </section>
+
+    <section id="login" aria-labelledby="login-title" hidden>
+      <h1 id="login-title" tabindex="-1">Log in</h1>
+      <p>Access your Northline projects. Demo only: use alex@example.test and DemoOnly!2026. Do not enter real credentials.</p>
+      <form id="login-form" autocomplete="off">
+        <label for="login-email">Email</label>
+        <input id="login-email" type="email" readonly placeholder="Use the button below">
+        <label for="login-password">Password</label>
+        <input id="login-password" type="password" readonly autocomplete="off">
+        <div class="actions"><button type="button" class="secondary" data-fill="login">Use demo details</button><button id="login-submit" disabled>Log in to demo</button></div>
+      </form>
+      <p class="switch">New to the portal? <a href="#register" data-next="register">Create an account</a></p>
+    </section>
+
+    <section id="account" aria-labelledby="account-title" hidden>
+      <p class="studio-line">Client portal</p>
+      <h1 id="account-title" tabindex="-1">Welcome, Alex.</h1>
+      <p>Your current projects with Northline Studio.</p>
+      <h2>Projects</h2>
+      <ul class="projects"><li><div><strong>Fieldwork — brand identity</strong><p>Visual direction and brand guidelines</p></div><span>In review</span></li><li><div><strong>Fieldwork — website</strong><p>Website design and handoff</p></div><span>In progress</span></li><li><div><strong>Spring campaign</strong><p>Print and digital launch assets</p></div><span>Completed</span></li></ul>
+      <h2>Account details</h2>
+      <dl><dt>Name</dt><dd id="account-name"></dd><dt>Email</dt><dd id="account-email"></dd></dl>
+      <p class="muted">Fictional projects and simulated login. No real client work or authentication.</p>
+      <div class="actions"><button data-next="decision">Review for deployment</button><button class="secondary" id="logout">Log out</button></div>
+    </section>
+
+    <section id="decision" aria-labelledby="decision-title" hidden>
+      <h1 id="decision-title" tabindex="-1">Ready for deployment?</h1>
+      <p>A junior developer built this client portal using an AI coding agent. Registration works. Login works. The dashboard opens.</p>
+      <p class="muted">This is a constructed fictional scenario, not proof that AI independently generated unsafe code. Neither choice is scored.</p>
+      <p>Would you approve this for deployment? What would you need to know before saying yes?</p>
+      <label for="reason">Your reason or question <span class="muted">(optional, 300 characters maximum)</span></label>
+      <textarea id="reason" rows="3" maxlength="300" autocomplete="off" aria-describedby="reason-note"></textarea>
+      <p id="reason-note" class="muted">Do not enter personal information. Your note stays in this page’s memory and is cleared on reload or restart.</p>
+      <div class="actions"><button class="secondary" data-choice="Approve deployment">Approve deployment</button><button class="secondary" data-choice="Request more information">Request more information</button></div>
+    </section>
+
+    <section id="reveal" aria-labelledby="reveal-title" hidden>
+      <h1 id="reveal-title" tabindex="-1">What the interface did not show</h1>
+      <p id="discovery"></p>
+      <div class="table-scroll" role="region" aria-label="Simulated database table" tabindex="0">
+        <table><caption>Simulated database — dummy data</caption><thead><tr><th scope="col">ID</th><th scope="col">Name</th><th scope="col">Email</th><th scope="col">Password</th><th scope="col">Created (UTC)</th></tr></thead><tbody id="database-row"></tbody></table>
+      </div>
+      <p><a href="database.html" target="_blank" rel="noopener">Open the demonstration database viewer</a></p>
+      <p>The password is readable: this fictional record stores it as plain text.</p>
+      <p>Functional testing alone did not establish how passwords were stored. Real systems should use an appropriate password hashing method, such as Argon2id, with a unique salt for each password.</p>
+      <button data-next="consequence">Consider a possible consequence</button>
+    </section>
+
+    <section id="consequence" aria-labelledby="consequence-title" hidden>
+      <h1 id="consequence-title" tabindex="-1">A hypothetical continuation</h1>
+      <p>Imagine the website was released without fixing this issue. A few weeks later, an unauthorized person obtains a copy of the database.</p>
+      <p>This continuation is separate from your decision. The exposure and timeline are fictional; the scenario does not establish how the database was accessed.</p>
+      <p>Readable passwords increase the harm of the leak:</p>
+      <ul><li>Someone could access affected accounts.</li><li>Reused passwords could put other accounts at risk.</li><li>The company must investigate, secure the system, and respond to affected users.</li></ul>
+      <p class="legal">GDPR Articles 32–34 address appropriate security and conditional breach notification duties to the supervisory authority and affected people. Fines are possible, not automatic. <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer">Read the GDPR</a>.</p>
+      <button data-next="reflection">Return to your decision</button>
+    </section>
+
+    <section id="reflection" aria-labelledby="reflection-title" hidden>
+      <h1 id="reflection-title" tabindex="-1">Who was responsible?</h1>
+      <div class="previous"><h2>Your earlier decision</h2><p id="previous-choice"></p><h2>Your reason or question</h2><p id="previous-reason"></p></div>
+      <ul class="questions"><li>What did you know when you made your decision?</li><li>Who should have checked password storage?</li><li>Who had the power to delay deployment?</li><li>What responsibility remains with the developer and company when AI writes the code?</li></ul>
+      <p>A working interface gives you some evidence. Deciding whether it is enough to release a system requires judgment about what remains unchecked and who must act.</p>
+      <button id="restart">Restart and clear my choices</button>
+    </section>
+    </div>
+  </main>
+  <footer><span>Northline Studio · © 2026 fictional company</span><span>Student project · fictional demo</span></footer>
+</body>
+</html>
