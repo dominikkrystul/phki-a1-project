@@ -1,0 +1,7 @@
+{
+  "framework": null,
+  "installCommand": "npm ci --prefix presentation",
+  "buildCommand": "npm run build --prefix presentation && npm run package:site --prefix presentation",
+  "outputDirectory": "presentation/.site",
+  "trailingSlash": true
+}

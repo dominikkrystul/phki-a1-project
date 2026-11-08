@@ -42,8 +42,9 @@ footer { border-top: 1px solid #d5d5d5; }
 :root { --accent: #33594e; background: #fff; }
 header, footer { max-width: 1200px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
 .logo { font-weight: 650; font-size: 1.25rem; text-decoration: none; color: #202020; letter-spacing: -.04em; }
-nav { display: flex; gap: 24px; align-items: center; }
+nav { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
 nav a { font-size: .9rem; }
+nav .presentation-link { padding: 8px 14px; border: 1px solid #888; border-radius: 3px; text-decoration: none; }
 main { max-width: 1100px; padding-top: 48px; }
 main:not(.portal-layout) { max-width: 940px; }
 .portal-layout { display: grid; grid-template-columns: 1.1fr 1fr; column-gap: 80px; }
