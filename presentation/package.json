@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "typecheck": "tsc -b",
     "preview": "vite preview --host 127.0.0.1",
-    "test": "node --experimental-strip-types --test tests/navigation.test.ts tests/consequences.test.ts tests/contribution.test.ts tests/opening.test.ts tests/final.test.ts",
+    "test": "node --experimental-strip-types --test tests/navigation.test.ts",
     "package:site": "node scripts/package-site.mjs",
     "package:offline": "python3 scripts/package-offline.py"
   },

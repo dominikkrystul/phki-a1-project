@@ -1,10 +1,21 @@
 # PHKI A1 — Northline Studio
 
-A static fictional design company client portal followed by an interactive responsibility review. HTML, CSS, and vanilla JavaScript only; no dependencies, build, backend, or external database.
+This repository contains the PHKI digital project: a fictional design-company client portal followed by an interactive review of responsibility, security and AI-assisted development.
 
-## Run locally
+The project is live at [phki-a1-project.vercel.app](https://phki-a1-project.vercel.app). The latest interactive presentation is available at [phki-a1-project.vercel.app/presentation/](https://phki-a1-project.vercel.app/presentation/).
 
-From this repository run `python3 -m http.server 8000`, then open http://localhost:8000/ . Open http://localhost:8000/database.html separately for the presentation viewer. Stop the server with Ctrl+C. Use a static server rather than file URLs so both pages reliably share the same storage origin.
+## Start here
+
+| What you want to see | Open |
+| --- | --- |
+| Main interactive portal | [`index.html`](./index.html) |
+| Database viewer for the demo record | [`database.html`](./database.html) |
+| Interactive presentation | [`presentation/`](./presentation/) |
+| Reflection and submission overview | [`A1-Reflection.md`](./A1-Reflection.md), [`DIGITAL_PROJECT_SUBMISSION.md`](./DIGITAL_PROJECT_SUBMISSION.md) |
+| Process notes and independent observations | [`PROCESS.md`](./PROCESS.md) |
+| Development prompts | [`DEVELOPMENT_PROMPTS.md`](./DEVELOPMENT_PROMPTS.md) |
+
+The portal is a static HTML, CSS and vanilla JavaScript project. The presentation is a separate React/Vite project in [`presentation/`](./presentation/).
 
 ## Demo journey
 
@@ -23,9 +34,42 @@ The table displays the actual registered record: ID, name, email, readable dummy
 
 Each visitor has a separate database because localStorage belongs to their browser profile and site origin (scheme, hostname, and port). Different browsers, private windows, localhost ports, and Vercel domains do not share it. No records are uploaded or shared between visitors. Blocked storage, quota errors, or invalid records produce a message; the simulation requires usable localStorage and sessionStorage rather than silently pretending persistence worked.
 
+## Run the portal locally
+
+From the repository root:
+
+```sh
+python3 -m http.server 8000
+```
+
+Then open:
+
+- http://localhost:8000/ for the portal
+- http://localhost:8000/database.html for the database viewer
+- http://localhost:8000/presentation/ for the prepared presentation
+
+Use a local HTTP server rather than opening files directly, so browser storage and relative assets work consistently. Stop the server with `Ctrl+C`.
+
+## Run the presentation locally
+
+The presentation has its own development workflow. From [`presentation/`](./presentation/):
+
+```sh
+npm ci
+npm run dev
+```
+
+For the prepared offline copy, build it first and then serve `presentation/.site` as described in [`presentation/README.md`](./presentation/README.md). Generated folders such as `node_modules/`, `dist/` and `.site/` are intentionally ignored by git.
+
 ## Deploy to Vercel
 
-This repository is ready to serve as a plain static site. No deployment has been performed or hosted URL verified. Import the repository in Vercel and use these settings:
+The repository is deployed as a plain static site. The live routes are:
+
+- [Main portal](https://phki-a1-project.vercel.app)
+- [Database viewer](https://phki-a1-project.vercel.app/database.html)
+- [Presentation](https://phki-a1-project.vercel.app/presentation/)
+
+For a new Vercel project, use these settings:
 
 | Setting | Value |
 | --- | --- |
@@ -36,7 +80,7 @@ This repository is ready to serve as a plain static site. No deployment has been
 | Install Command | Leave empty; there are no dependencies to install. |
 | Environment Variables | None. |
 
-No `vercel.json` or catch-all rewrite is needed. Vercel should serve `index.html` at `/` and the viewer directly at `/database.html`, with the existing relative CSS and JavaScript paths unchanged.
+No catch-all rewrite is needed. Vercel serves `index.html` at `/` and the viewer directly at `/database.html`, with the existing relative CSS and JavaScript paths unchanged.
 
 The database is simulated in each visitor's browser. Local demo records will **not** transfer to the Vercel URL: visitors must register the dummy account on the deployed site. Preview and production domains also have separate storage. Download JSON from the viewer to submit the demo database separately; the export does not upload or migrate records. This is a fictional demonstration, not production authentication.
 

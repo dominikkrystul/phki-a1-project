@@ -1,35 +1,63 @@
 # Process record
 
-## AI contribution
+## My project decisions
 
-An AI coding agent generated the initial HTML, CSS, JavaScript, README, and this process template from the student’s supplied requirements. This includes the staged journey, fixed dummy account, simulated interactions, deployment choices, fictional reveal and continuation, responsibility questions, responsive styling, and accessibility provisions.
+- I chose responsibility as the main PHKI concept. Power supports the discussion about who can stop deployment.
+- I focused on junior developers using AI coding agents.
+- I designed a fictional website with deliberately readable password storage.
+- My lecturer suggested asking the audience about deployment before revealing the problem.
+- I used this order to let people reconsider their decision after receiving more information.
+- The original requirements are saved in [DEVELOPMENT_PROMPTS.md](DEVELOPMENT_PROMPTS.md).
 
-The insecure record and consequence were explicitly specified as fiction. They are not an observed incident or evidence of independently generated insecure authentication code. AI-written wording and implementation are not the student’s independent observations or analysis.
+## AI contributions
 
-Verification performed during creation is reported in the delivery message. The checklist in README.md can be used for subsequent student review.
+- I used ChatGPT and Codex. The saved prompts document the coding agent's tasks.
+- The agent generated the initial HTML, CSS and JavaScript.
+- It added the dummy account, staged journey and responsibility questions.
+- It also produced interface wording, responsive styling and accessibility provisions.
+- AI helped implement the animated presentation and its speaking script.
+- Codex prepared an initial reflection draft from the project evidence.
+- This process update was also edited by Codex using the avoid-ai-writing skill.
 
-## My observations
+## Changes during development
 
-<!-- Student contribution: intentionally left empty. -->
+- The first version looked like an assignment page.
+- I asked the agent to turn it into the fictional Northline Studio website.
+- I kept the deployment decision and password reveal.
+- The agent added registration, login and a client dashboard.
+- It added a database viewer with JSON export and reset controls.
+- Fixed dummy records moved from temporary memory to `localStorage`.
+- A demo login marker uses `sessionStorage`.
+- Audience choices and written reasons stay in memory. Reloading clears them.
+- The separate presentation now has eight scenes. It includes the fictional consequences and a contribution scene.
+- Git commit `3ddb4eb` added Vercel integration and website navigation to the presentation.
 
-## My interpretation of the deployment decision
+## Recorded checks
 
-<!-- Student contribution: intentionally left empty. -->
+- JavaScript syntax checks and `node verify.cjs` passed during the earlier AI-assisted review.
+- Browser checks covered registration, login and the dashboard.
+- They covered both deployment choices, the reveal, reflection and restart.
+- An HTML-shaped audience note appeared as literal text.
+- The viewer showed matching records. JSON download and reset were checked.
+- Reset updates were checked across browser tabs.
+- The 390-pixel mobile check found no horizontal overflow.
+- Its preview is saved in `screenshots/mobile-preview.jpg`.
+- Storage failures were checked with assertions. Browser privacy settings need separate testing.
+- Submission screenshots and the hosted project are documented in [DIGITAL_PROJECT_SUBMISSION.md](DIGITAL_PROJECT_SUBMISSION.md).
 
-## My annotations about responsibility and missed checks
+## Responsibility and limits
 
-<!-- Student contribution: intentionally left empty. -->
+- Password storage needs its own review, even when login works.
+- The readable password was deliberately requested for the teaching scenario.
+- This example cannot measure how often AI agents generate vulnerabilities.
+- The fictional exposure assumes someone obtains a database copy.
+- Reviewing generated code and authorizing release require human judgment.
+- Junior developers need review support and a way to delay deployment.
 
-## My changes after reviewing the prototype
+## Personal notes still to add
 
-<!-- Student contribution: intentionally left empty. -->
-
-## AI-assisted revision — Northline Studio
-
-An AI coding agent revised the assignment-style interface into the fictional Northline Studio client portal, including registration, login, project dashboard, and the preserved responsibility scenario. It added browser-local dummy record operations, a public database viewer, JSON export/reset, an example export, and submission instructions. It updated the README and styling. These implementation and wording changes are AI-assisted work, not independent student observations.
-
-This revision intentionally changes the original memory-only account simulation: fixed dummy account records now persist in localStorage, and a demo login marker uses sessionStorage. Audience choices and written reasons remain in memory only. The readable password and hypothetical exposure remain deliberately constructed teaching material. Existing independent contribution sections above were preserved for the student.
-
-### AI-assisted verification of the revision
-
-JavaScript syntax checks and `node verify.cjs` passed. A browser pass covered login before registration, registration, dashboard, both deployment choices, the reveal and reflection, literal rendering of an HTML-shaped note, restart, matching viewer records, JSON download, and database reset with cross-tab update. A 390-pixel mobile layout had no horizontal page overflow; a preview is saved in screenshots/mobile-preview.jpg. Storage failure handling was assertion-tested, not tested by changing browser privacy settings. Deployment, cross-browser testing, and a submission PDF were not performed. The preview is verification evidence, not the complete submission screenshot set.
+- Describe what I personally checked in the generated code.
+- Record any audience reactions or further lecturer feedback.
+- Explain ChatGPT's specific role alongside Codex.
+- Confirm which learning statements match my experience.
+- Add any rehearsal results and further browser or projector checks.
